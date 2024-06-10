@@ -1,0 +1,55 @@
+Job_Profile,Job_title,Department,Compensation,Level,Bonus
+JP_1000,CEO,Corporate," 500,000.00 ",CSuite,1.0
+JP_1001,HR Manager,Corporate," 100,000.00 ",Manager,0.2
+JP_1002,AR Specialist,Corporate," 65,000.00 ",Individual Contributor,0.15
+JP_1003,AP Specialist,Corporate," 65,000.00 ",Individual Contributor,0.15
+JP_1004,FP&A Analyst,Corporate," 70,000.00 ",Individual Contributor,0.15
+JP_1005,Coordinator,Corporate," 50,000.00 ",Individual Contributor,0.15
+JP_1006,HR Coordinator,Corporate," 50,000.00 ",Individual Contributor,0.15
+JP_1007,Counsel,Corporate," 220,000.00 ",Individual Contributor,0.15
+JP_1008,Finance Coordinator,Corporate," 55,000.00 ",Individual Contributor,0.15
+JP_1009,Accountant,Corporate," 85,000.00 ",Individual Contributor,0.15
+JP_1010,"Specialist, Training and Development",Corporate," 70,000.00 ",Individual Contributor,0.15
+JP_1011,"Manager, Corporate",Corporate," 120,000.00 ",Manager,0.15
+JP_1012,"VP, Corporate",Corporate," 225,000.00 ",VP,0.3
+JP_1013,HR Generalist,Corporate," 75,000.00 ",Individual Contributor,0.15
+JP_1014,HR Analyst,Corporate," 65,000.00 ",Individual Contributor,0.15
+JP_1015,Associate Account Manager,Customer Service," 55,000.00 ",Individual Contributor,0.15
+JP_1016,Account Manager,Customer Service," 70,000.00 ",Individual Contributor,0.15
+JP_1017,"SVP, Customer Service",Customer Service," 280,000.00 ",SVP,0.3
+JP_1018,Senior Account Manager,Customer Service," 100,000.00 ",Senior,0.15
+JP_1019,"Manager, Customer Service",Customer Service," 85,000.00 ",Manager,0.2
+JP_1020,CS Operations Specialist,Customer Service," 80,000.00 ",Individual Contributor,0.15
+JP_1021,"Director, Customer Service",Customer Service," 160,000.00 ",Director,0.2
+JP_1022,Graphic Designer,Marketing," 75,000.00 ",Individual Contributor,0.15
+JP_1023,Programmatic Marketing Specialist,Marketing," 70,000.00 ",Individual Contributor,0.15
+JP_1024,Copy Writer,Marketing," 85,000.00 ",Individual Contributor,0.15
+JP_1025,"Associate, Marketing",Marketing," 120,000.00 ",Associate,0.1
+JP_1026,"VP, Marketing",Marketing," 250,000.00 ",VP,0.3
+JP_1027,"Manager, Marketing",Marketing," 130,000.00 ",Manager,0.2
+JP_1028,"Director, Marketing",Marketing," 190,000.00 ",Director,0.2
+JP_1029,Account Executive,Sales," 85,000.00 ",Individual Contributor,0.15
+JP_1030,"Director, Sales",Sales," 175,000.00 ",Director,0.2
+JP_1031,Regional Sales Manager,Sales," 140,000.00 ",Manager,0.2
+JP_1032,Sales Manager,Sales," 120,000.00 ",Manager,0.2
+JP_1033,"SVP, Sales",Sales," 350,000.00 ",SVP,0.3
+JP_1034,Sales Team Lead,Sales," 95,000.00 ",Senior,0.15
+JP_1035,"Associate, Sales",Sales," 75,000.00 ",Associate,0.1
+JP_1036,CTO,Technology," 400,000.00 ",CSuite,0.5
+JP_1037,IT,Technology," 80,000.00 ",Individual Contributor,0.15
+JP_1038,Software Engineer,Technology," 110,000.00 ",Individual Contributor,0.15
+JP_1039,"Director, Engineering",Technology," 200,000.00 ",Director,0.2
+JP_1040,Senior Software Engineer,Technology," 140,000.00 ",Senior,0.15
+JP_1041,"VP, Technology",Technology," 325,000.00 ",VP,0.3
+JP_1042,"Manager, Engineering",Technology," 155,000.00 ",Manager,0.2
+JP_1043,"SVP, Technology",Technology," 355,000.00 ",SVP,0.3
+JP_1044,"Senior, Copy Writer",Marketing," 100,000.00 ",Senior,0.15
+JP_1045,Chief Marketing Officer,Marketing," 370,000.00 ",CSuite,0.5
+JP_1046,"SVP, Marketing",Marketing," 325,000.00 ",SVP,0.3
+JP_1047,"Manager, Finance",Corporate," 110,000.00 ",Manager,0.2
+JP_1048,Chief Financial Officer,Corporate," 390,000.00 ",CSuite,0.5
+JP_1049,Chief Human Resources Officer,Corporate," 380,000.00 ",CSuite,0.5
+JP_1050,"Senior, Finance",Corporate," 110,000.00 ",Senior,0.15
+JP_1051,"Director, HR",Corporate," 180,000.00 ",Director,0.2
+JP_1052,"Director, Finance",Corporate," 190,000.00 ",Director,0.2
+JP_1053,Chieft Customer Officer,Customer Service," 380,000.00 ",CSuite,0.5
