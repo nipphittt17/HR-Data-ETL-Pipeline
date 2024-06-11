@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS public."CompanyData";
+DROP TABLE IF EXISTS public."Employment";
 DROP TABLE IF EXISTS public."Employee";
 DROP TABLE IF EXISTS public."JobProfile";
 DROP TABLE IF EXISTS public."State";
@@ -12,7 +12,7 @@ CREATE TABLE public."State"(
     state_full varchar(50) NOT NULL,
     PRIMARY KEY (state)
 );
-COPY public."State" FROM '/Users/nipphittt/automating-your-data-pipeline-with-apache-airflow/dags/dataset/tables/State.csv' WITH (FORMAT csv, HEADER);
+COPY public."State" FROM '/dataset/tables/State.csv' WITH (FORMAT csv, HEADER);
 
 
 CREATE TABLE public."Country"(
@@ -20,7 +20,7 @@ CREATE TABLE public."Country"(
     country_full varchar(20) NOT NULL,
     PRIMARY KEY (country)
 );
-COPY public."Country" FROM '/Users/nipphittt/automating-your-data-pipeline-with-apache-airflow/dags/dataset/tables/Country.csv' WITH (FORMAT csv, HEADER);
+COPY public."Country" FROM '/dataset/tables/Country.csv' WITH (FORMAT csv, HEADER);
 
 
 CREATE TABLE public."Employee"
@@ -40,8 +40,7 @@ CREATE TABLE public."Employee"
     FOREIGN KEY(state) REFERENCES public."State" (state),
     FOREIGN KEY(country) REFERENCES public."Country" (country)
 );
-COPY public."Employee" FROM '/Users/nipphittt/automating-your-data-pipeline-with-apache-airflow/dags/dataset/tables/Employee.csv' WITH (FORMAT csv, HEADER);
-
+COPY public."Employee" FROM '/dataset/tables/Employee.csv' WITH (FORMAT csv, HEADER);
 
 
 CREATE TABLE public."JobProfile"
@@ -54,10 +53,9 @@ CREATE TABLE public."JobProfile"
     bonus_pct FLOAT NOT NULL,
     PRIMARY KEY (job_profile)
 );
+COPY public."JobProfile" FROM '/dataset/tables/JobProfile.csv' WITH (FORMAT csv, HEADER);
 
-COPY public."JobProfile" FROM '/Users/nipphittt/automating-your-data-pipeline-with-apache-airflow/dags/dataset/tables/JobProfile.csv' WITH (FORMAT csv, HEADER);
 
--- DROP TABLE IF EXISTS public."Bill";
 CREATE TABLE public."CompanyData"
 (
     company_id INTEGER NOT NULL,
@@ -75,7 +73,6 @@ CREATE TABLE public."CompanyData"
     FOREIGN KEY(employee_id) REFERENCES public."Employee" (employee_id),
     FOREIGN KEY(job_profile) REFERENCES public."JobProfile" (job_profile)
 );
-
-COPY public."CompanyData" FROM '/Users/nipphittt/automating-your-data-pipeline-with-apache-airflow/dags/dataset/tables/CompanyData.csv' WITH (FORMAT csv, HEADER);
+COPY public."CompanyData" FROM '/Users/nipphittt/automating-your-data-pipeline-with-apache-airflow/dags/dataset/tables/Employment.csv' WITH (FORMAT csv, HEADER);
 
 END;
