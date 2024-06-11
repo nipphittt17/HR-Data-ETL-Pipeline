@@ -56,9 +56,9 @@ CREATE TABLE public."JobProfile"
 COPY public."JobProfile" FROM '/dataset/tables/JobProfile.csv' WITH (FORMAT csv, HEADER);
 
 
-CREATE TABLE public."CompanyData"
+CREATE TABLE public."Employment"
 (
-    company_id INTEGER NOT NULL,
+    employment_id INTEGER NOT NULL,
     employee_id INTEGER NOT NULL,
     office varchar(10) NOT NULL,
     start_date date NOT NULL,
@@ -69,10 +69,10 @@ CREATE TABLE public."CompanyData"
     active_status INTEGER NOT NULL,
     job_profile char(7) NOT NULL,
 
-    PRIMARY KEY(company_id),
+    PRIMARY KEY(employment_id),
     FOREIGN KEY(employee_id) REFERENCES public."Employee" (employee_id),
     FOREIGN KEY(job_profile) REFERENCES public."JobProfile" (job_profile)
 );
-COPY public."CompanyData" FROM '/Users/nipphittt/automating-your-data-pipeline-with-apache-airflow/dags/dataset/tables/Employment.csv' WITH (FORMAT csv, HEADER);
+COPY public."CompanyData" FROM '/dataset/tables/Employment.csv' WITH (FORMAT csv, HEADER);
 
 END;

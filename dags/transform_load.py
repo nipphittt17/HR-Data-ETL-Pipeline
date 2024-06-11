@@ -103,7 +103,7 @@ default_args = {
 
 # dag definition
 with DAG('transform_load',
-         schedule_interval=timedelta(minutes=10),
+         schedule_interval='@daily',
          default_args=default_args,
          description='A simple data pipeline',
          catchup=False) as dag:

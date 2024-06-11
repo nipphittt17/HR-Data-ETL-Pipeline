@@ -21,7 +21,7 @@ default_args = {
 
 # dag definition
 with DAG('extract_text_files',
-         schedule_interval=timedelta(minutes=5),
+         schedule_interval='@daily',
          default_args=default_args,
          description='A simple data pipeline',
          catchup=False) as dag:
