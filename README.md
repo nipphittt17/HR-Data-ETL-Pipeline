@@ -1,9 +1,9 @@
-# HR-Analysis
+# HR-Data-ETL-Pipeline
 
-The objective of this project was to design and implement an ETL (Extract, Transform, Load) pipeline that automates the processing of data from multiple text files, transforms the data according to business requirements and schemas constraint, and loads it into a PostgreSQL database. The workflow were automated and scheduled using Apache Airflow with python and sql scripts. The processed data is then visualized using Tableau to derive actionable insights
+The objective of this project was to design and implement an ETL (Extract, Transform, Load) pipeline that automates the processing of human resources data from multiple text files, transforms the data according to business requirements and schemas constraint, and loads it into a PostgreSQL database. The workflow were automated and scheduled using Apache Airflow with python and sql scripts. The processed data is then visualized using Tableau to derive actionable insights
 
 - [Extract](dags/exteact.py)
-- [Transform & Load](dags/transform_load.py) with ... [SQL script](dags/load_data.sql)
+- [Transform & Load](dags/transform_load.py)
 - [Visualization]()
 
 ## Enviroment preparation
