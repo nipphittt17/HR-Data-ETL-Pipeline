@@ -31,13 +31,6 @@ with DAG('extract_text_files',
     )
 
     t2 = BashOperator(
-        task_id='extract_diversity',
-        bash_command=f'tr "\\t" "," < {DATA_FOLDER}/Diversity.txt \
-        > {EXTRACTED_ZONE}/Diversity.csv',
-        dag=dag,
-    )
-
-    t3 = BashOperator(
         task_id='extract_job_profile',
         bash_command=f"tr '\\t' ','  < {DATA_FOLDER}/2021.06_job_profile_mapping.txt \
         > {EXTRACTED_ZONE}/JobProfileMapping.csv",
@@ -45,4 +38,4 @@ with DAG('extract_text_files',
     )
 
 
-    t1 >> t2 >> t3
+    t1 >> t2
