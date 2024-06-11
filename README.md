@@ -8,8 +8,7 @@ The objective of this project was to design and implement an ETL (Extract, Trans
 ## Enviroment preparation
 
 This project used **Apache Airflow** running via Docker.
-[Docker compose file](docker-compose.yaml)
-[Original source](https://airflow.apache.org/docs/apache-airflow/2.9.1/docker-compose.yaml)
+[Docker compose file](https://airflow.apache.org/docs/apache-airflow/2.9.1/docker-compose.yaml)
 
 ```
 docker compose up
