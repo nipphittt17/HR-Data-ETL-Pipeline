@@ -31,7 +31,7 @@ Based on the raw data, a snowflake schema was designed to ensure optimal organiz
 <br><br> <img src="  .png" alt="Data_model" height = 1000> <br>
 
 **1. Fact table**
-- CompanyData: This table stores comprehensive employment details for each employee. This table captures the history of an employee's association with a company. The company ID was generated, in case that the employee might change positions within the organizationn. This table is connected to the Employee and JobProfile tables via foreign keys.
+- EmploymentData: This table stores comprehensive employment details for each employee. This table captures the history of an employee's association with a company. The company ID was generated, in case that the employee might change positions within the organizationn. This table is connected to the Employee and JobProfile tables via foreign keys.
 
 **2. Dimension tables**
 - Employee: This table contains personal and demographic information for each employee.
@@ -40,16 +40,18 @@ Based on the raw data, a snowflake schema was designed to ensure optimal organiz
 ## Extract-Transform-Load
 **1. Extract**
 - The initial step involved extracting text files and converting them into .csv format using the BashOperator in Apache Airflow.
-- The extraction script is located [here](dags/exteact.py).
+- [Extraction script](dags/exteact.py).
+
 **2. Transform**
 - After extraction, the transformation process was executed using the PythonOperator.
 - This step focused on eliminating duplications and rearranging the columns of each table to match the designed schema.
-- The detailed data cleaning process is documented [here](dags/transform_load.py).
+- [Detailed data transformation process](dags/transform_load.py).
+
 **3. Load**
 - Once the data was transformed, it was ready to be loaded into the PostgreSQL database.
 - The PostgresHook was utilized to manage database connections and operations.
 - Python scripts established the connection and executed SQL commands to load the .csv files into the database.
 - The SQL script, which includes table creation and data loading commands, ensures that the data adheres to the specified schema and constraints, thereby maintaining data integrity and consistency.
-- The detailed data loading process can be found [here](dags/transform_load.py), and the SQL script is available [here](dags/load_data.sql).
+- [Detailed data loading process](dags/transform_load.py), with [SQL script](dags/load_data.sql).
 
 
