@@ -49,13 +49,13 @@ Based on the raw data, an entiry relationship diagram was designed to ensure opt
 - The PostgresHook was utilized to manage database connections and operations.
 - Python scripts established the connection and executed SQL commands to load the .csv files into the database.
 - The SQL script, which includes table creation and data loading commands, ensures that the data adheres to the specified schema and constraints, thereby maintaining data integrity and consistency.
-- - This final step ensures that our HR-related data is stored and readily accessible for analysis and reporting purposes.
+- This made HR-related data stored and readily accessible for analysis and reporting purposes.
 - [Detailed data loading process](dags/transform_load.py), with [SQL script](dags/load_data.sql).
 
 ## Future works
 - Enhance pipeline automation between extract, transform, and load tasks to improve efficiency and streamline data processing workflows.
-- Conduct more comprehensive data cleaning and perform in-depth data analysis.
-- Connect the database with BI tools and create insightful visualizations.
+- Conduct more comprehensive data cleaning, and perform in-depth data analysis.
+- Connect the database with BI tools, and create insightful visualizations.
 
 
 
