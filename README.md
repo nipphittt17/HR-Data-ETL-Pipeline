@@ -18,6 +18,7 @@ docker compose up
 
 ## Dataset
 Two text files were downloaded from [this github repository](https://github.com/Koluit/The_Company_Data.git)
+
 **1. CompanyData.txt**
 Columns: EmployeeID, First_Name, Surname, StreetAddress, City, State, StateFull, ZipCode, Country, CountryFull, Age, Office, Start_Date, Termination_Date, Office_Type, Department, Currency, Bonus_pct, Job_title, DOB, level, Salary, Active, Status, Job_Profile, Notes
 
@@ -30,11 +31,11 @@ Based on the raw data, a snowflake schema was designed to ensure optimal organiz
 <br><br> <img src="  .png" alt="Data_model" height = 1000> <br>
 
 **1. Fact table**
-- CompanyData: This table stores comprehensive employment details for each employee. This table captures the history of an employee's association with a company. The company ID was generated, in case that any employee
+- CompanyData: This table stores comprehensive employment details for each employee. This table captures the history of an employee's association with a company. The company ID was generated, in case that the employee might change positions within the organizationn. This table is connected to the Employee and JobProfile tables via foreign keys.
 
 **2. Dimension tables**
-- Employee:
-- JobProfile:
+- Employee: This table contains personal and demographic information for each employee.
+- JobProfile: This table provides details about each job profile, including job titles, department, and other relevant attributes.
 
 ## Extract-Transform-Load
 **1. Extract**
