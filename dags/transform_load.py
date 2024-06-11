@@ -73,17 +73,7 @@ def transform_jobprofile():
     job_df = job_df.drop_duplicates()
     job_df = job_df.dropna()
     job_df.to_csv(f'{TABLE_ZONE}/JobProfile.csv', index=False)
-
-default_args = {
-    'owner': 'Nipphit Apisitpuwakul',
-    'start_date': days_ago(0),
-    'email': ['keanapisit@hotmail.com'],
-    'email_on_failure': True,
-    'email_on_retry': True,
-    'retries': 1,
-    'retry_delay': timedelta(minutes=5),
-}
-
+    
 def create_table_load_data():
     with open('/opt/airflow/dags/load_data.sql', 'r') as file:
         sql_load= file.read()
@@ -98,6 +88,17 @@ def create_table_load_data():
 
     cur.close()
     conn.close()
+
+default_args = {
+    'owner': 'Nipphit Apisitpuwakul',
+    'start_date': days_ago(0),
+    'email': ['keanapisit@hotmail.com'],
+    'email_on_failure': True,
+    'email_on_retry': True,
+    'retries': 1,
+    'retry_delay': timedelta(minutes=5),
+}
+
 
 with DAG('transform_load',
          schedule_interval=timedelta(minutes=10),
