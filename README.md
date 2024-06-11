@@ -1,15 +1,15 @@
 # HR-Data-ETL-Pipeline
 
-The objective of this project is to design and implement an ETL (Extract, Transform, Load) pipeline that automates the processing of human resources data from multiple text files, transforms the data according to schemas constraints, and loads it into a PostgreSQL database. The workflow is automated and scheduled daily using Apache Airflow with Python and SQL scripts. 
+The objective of this project is to design and implement an ETL (Extract, Transform, Load) pipeline that automates the processing of human resources data from multiple text files, transforms the data according to schemas constraints, and loads it into a **PostgreSQL** database. The workflow is automated and scheduled daily using **Apache Airflow** with **Python** and **SQL** scripts. 
   
 ## Environment preparation
 
-This project uses **Apache Airflow** running via **Docker**. To get started, download the [Docker compose file](https://airflow.apache.org/docs/apache-airflow/2.9.1/docker-compose.yaml) to the project directory, and run the following command.
+- This project uses **Apache Airflow** running via **Docker**. To get started, download the [Docker compose file](https://airflow.apache.org/docs/apache-airflow/2.9.1/docker-compose.yaml) to the project directory, and run the following command.
 
 ```
 docker compose up
 ```
-**PostgreSQL** serves as the project's database management system. The database named *hrdb* was primarily created and hosted locally. To perform the loading process, configuring the connection between **PostgreSQL** and **Apache Airflow** within the Airflow environment is necessary. To set up the connection between Apache Airflow and PostgreSQL, specify the following details: Connection id, Connection type: *postgres*, host, schema: *hrdb*, login, password, and port: *5432*. These details will not only establish the connection within Apache Airflow but also serve as references for establishing the connection in Python scripts.
+- **PostgreSQL** serves as the project's database management system. The database named *hrdb* was primarily created and hosted locally. To perform the loading process, configuring the connection between **PostgreSQL** and **Apache Airflow** within the Airflow environment is necessary. To set up the connection between Apache Airflow and PostgreSQL, specify the following details: Connection id, Connection type: *postgres*, host, schema: *hrdb*, login, password, and port: *5432*. These details will not only establish the connection within Apache Airflow but also serve as references for establishing the connection in Python scripts.
 
 ## Dataset
 Two text files containing human resources data were obtained from [this GitHub repository](https://github.com/Koluit/The_Company_Data.git). Below are the details of the columns extracted from two text files:
@@ -49,7 +49,14 @@ Based on the raw data, an entiry relationship diagram was designed to ensure opt
 - The PostgresHook was utilized to manage database connections and operations.
 - Python scripts established the connection and executed SQL commands to load the .csv files into the database.
 - The SQL script, which includes table creation and data loading commands, ensures that the data adheres to the specified schema and constraints, thereby maintaining data integrity and consistency.
-- This final step ensures that our HR-related data is stored and readily accessible for analysis and reporting purposes.
+- - This final step ensures that our HR-related data is stored and readily accessible for analysis and reporting purposes.
 - [Detailed data loading process](dags/transform_load.py), with [SQL script](dags/load_data.sql).
+
+## Future works
+- Enhance pipeline automation between extract, transform, and load tasks to improve efficiency and streamline data processing workflows.
+- Conduct more comprehensive data cleaning and perform in-depth data analysis.
+- Connect the database with BI tools and create insightful visualizations.
+
+
 
 
