@@ -20,21 +20,23 @@ docker compose up
 Two text files were downloaded from [this github repository](https://github.com/Koluit/The_Company_Data.git)
 
 **1. CompanyData.txt**
-Columns: EmployeeID, First_Name, Surname, StreetAddress, City, State, StateFull, ZipCode, Country, CountryFull, Age, Office, Start_Date, Termination_Date, Office_Type, Department, Currency, Bonus_pct, Job_title, DOB, level, Salary, Active, Status, Job_Profile, Notes
+<br> Columns: EmployeeID, First_Name, Surname, StreetAddress, City, State, StateFull, ZipCode, Country, CountryFull, Age, Office, Start_Date, Termination_Date, Office_Type, Department, Currency, Bonus_pct, Job_title, DOB, level, Salary, Active, Status, Job_Profile, Notes
 
 **2. 2021.06_job_profile_mapping.txt**
-Columns: Department, Job_title, Job_Profile, Compensation, Level, Bonus %
+<br> Columns: Department, Job_title, Job_Profile, Compensation, Level, Bonus %
 
 ## Data model
-Based on the raw data, a snowflake schema was designed to ensure optimal organization and efficiency in data retrieval and analysis. The schema is depicted below:
+Based on the raw data, an entiry-relationship diagram was designed to ensure optimal organization and efficiency in data retrieval and analysis. The schema is depicted below:
 
-<br><br> <img src="  .png" alt="Data_model" height = 1000> <br>
+<br><br> <img src="data_model.png" alt="Data_model"> <br>
 
 **1. Fact table**
-- EmploymentData: This table stores comprehensive employment details for each employee. This table captures the history of an employee's association with a company. The company ID was generated, in case that the employee might change positions within the organizationn. This table is connected to the Employee and JobProfile tables via foreign keys.
+- Employment: This table stores comprehensive employment details of employees. This table captures the history of an employee's association with a company. The employment ID was generated, in case that the employee might change or have several positions within the organizationn. Additionally, this table is connected to the Employee and JobProfile tables via foreign keys.
 
 **2. Dimension tables**
-- Employee: This table contains personal and demographic information for each employee.
+- Employee: This table contains personal and demographic information for each employee. The state and country names are stored only in abbreviated forms and connected to the State and Country tables via foreign keys.
+- State: This table contains state names in both abbreviated and full forms.
+- Country: This table contains country names in both abbreviated and full forms.
 - JobProfile: This table provides details about each job profile, including job titles, department, and other relevant attributes.
 
 ## Extract-Transform-Load
