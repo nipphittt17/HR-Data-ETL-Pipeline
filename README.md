@@ -9,7 +9,7 @@ The objective of this project is to design and implement a simple ETL (Extract, 
 ```
 docker compose up
 ```
-- **PostgreSQL** serves as the project's database management system. The database named *hrdb* was primarily created and hosted locally. To perform the loading process, configuring the connection between **PostgreSQL** and **Apache Airflow** within the Airflow environment is necessary. To set up the connection between Apache Airflow and PostgreSQL, specify the following details: Connection id, Connection type: *postgres*, host, schema: *hrdb*, login, password, and port: *5432*. These details will not only establish the connection within Apache Airflow but also serve as references for establishing the connection in Python scripts.
+- **PostgreSQL** serves as the project's database management system. The database named *hrdb* was primarily created and hosted locally. To perform the loading process, configuring the connection between **PostgreSQL** and **Apache Airflow** within the Airflow environment is necessary. To set up the connection between Apache Airflow and PostgreSQL, specify the following details: connection id, connection type: *postgres*, host: *host.docker.internal*, schema: *hrdb*, login, password, and port: *5432*. The connection id and schema will not only establish the connection within Apache Airflow but also serve as references for establishing the connection in Python scripts.
 
 ## Dataset
 Two text files containing human resources data were obtained from [this GitHub repository](https://github.com/Koluit/The_Company_Data.git). Below are the details of the columns extracted from two text files:
@@ -49,7 +49,7 @@ Based on the raw data, an entiry relationship diagram was designed to ensure opt
 - The PostgresHook was utilized to manage database connections and operations.
 - Python scripts established the connection and executed SQL commands to load the .csv files into the database.
 - The SQL script, which includes table creation and data loading commands, ensures that the data adheres to the specified schema and constraints, thereby maintaining data integrity and consistency.
-- This made HR-related data stored and readily accessible for analysis and reporting purposes.
+- This made HR-related data stored and readily accessible for analysis and visualization.
 - [Detailed data loading process](dags/transform_load.py), with [SQL script](dags/load_data.sql).
 
 ## Future works
