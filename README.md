@@ -21,6 +21,8 @@ Two text files containing human resources data were obtained from [this GitHub r
 **2. 2021.06_job_profile_mapping.txt**
 <br> Columns: Department, Job_title, Job_Profile, Compensation, Level, Bonus %
 
+All text files are stored in *dags/dataset/* directory.
+
 ## Data model
 Based on the raw data, an entiry relationship diagram was designed to ensure optimal organization and efficiency in data retrieval and analysis. The schema is depicted below:
 
@@ -39,11 +41,13 @@ Based on the raw data, an entiry relationship diagram was designed to ensure opt
 **1. Extract**
 - The initial step involved extracting text files and converting them into .csv format using the BashOperator in Apache Airflow.
 - [Extraction script](dags/exteact.py).
+- The extracted files are stored in *dags/dataset/extracted_csv/* directory.
 
 **2. Transform**
 - After extraction, the transformation process was executed using the PythonOperator.
 - This step focused on eliminating duplications and rearranging the columns of each table to match the designed schema.
 - [Detailed data transformation process](dags/transform_load.py).
+- The transformed files are stored in *dags/dataset/tables/* directory.
 
 **3. Load**
 - Once the data was transformed, it was ready to be loaded into the PostgreSQL database.
