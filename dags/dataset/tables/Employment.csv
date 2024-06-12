@@ -1,4 +1,4 @@
-CompanyData_ID,EmployeeID,Office,Start_Date,Termination_Date,Office_Type,Currency,Salary,Active Status,Job_Profile
+EmploymentID,EmployeeID,Office,Start_Date,Termination_Date,Office_Type,Currency,Salary,Active Status,Job_Profile
 0,100001,NYC,5/4/2009,12/12/2999,Corporate,USD,500000,1,JP_1000
 1,100002,NYC,5/4/2009,12/12/2999,Corporate,USD,70000,1,JP_1001
 2,100003,NYC,5/18/2009,6/5/2013,Corporate,USD,77000,0,JP_1022

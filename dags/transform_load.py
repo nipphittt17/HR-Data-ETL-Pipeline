@@ -12,8 +12,6 @@ import logging
 EXTRACTED_ZONE = "/opt/airflow/dags/dataset/extracted_csv"
 TABLE_ZONE = "/opt/airflow/dags/dataset/tables"
 
-employee = f'{EXTRACTED_ZONE}/CompanyData.csv'
-
 # function for transforming companydata file
 def transform_company_data():
     input_file = f'{EXTRACTED_ZONE}/CompanyData.csv'
@@ -30,6 +28,7 @@ def transform_company_data():
     state_df = df[["State", "StateFull"]]
     # include only unique values
     state_df = state_df.drop_duplicates()
+    state_df = state_df.dropna()
     # exclude some entries that 'state' is not an abbreviation
     state_df = state_df[state_df["State"] != state_df["StateFull"]]
     state_df.to_csv(f'{TABLE_ZONE}/State.csv', index=False)
@@ -38,6 +37,7 @@ def transform_company_data():
     country_df = df[["Country", "CountryFull"]]
     # include only unique values
     country_df = country_df.drop_duplicates()
+    country_df = country_df.dropna()
     country_df.to_csv(f'{TABLE_ZONE}/Country.csv', index=False)
 
     # employee file
