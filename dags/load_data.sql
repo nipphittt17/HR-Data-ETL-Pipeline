@@ -73,6 +73,6 @@ CREATE TABLE public."Employment"
     FOREIGN KEY(employee_id) REFERENCES public."Employee" (employee_id),
     FOREIGN KEY(job_profile) REFERENCES public."JobProfile" (job_profile)
 );
-COPY public."CompanyData" FROM '/dataset/tables/Employment.csv' WITH (FORMAT csv, HEADER);
+COPY public."Employment" FROM '/dataset/tables/Employment.csv' WITH (FORMAT csv, HEADER);
 
 END;

@@ -12,6 +12,8 @@ import logging
 EXTRACTED_ZONE = "/opt/airflow/dags/dataset/extracted_csv"
 TABLE_ZONE = "/opt/airflow/dags/dataset/tables"
 
+employee = f'{EXTRACTED_ZONE}/CompanyData.csv'
+
 # function for transforming companydata file
 def transform_company_data():
     input_file = f'{EXTRACTED_ZONE}/CompanyData.csv'
